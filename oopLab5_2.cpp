@@ -14,8 +14,8 @@ int main(){
         stOut.close();
         cout<<"Writing done"<<endl;
         char ch;
-        while(!stIn.eof()){
-            stIn >> ch;
+        while(stIn>>ch){
+            //stIn >> ch;
             cout<<ch;
         }
         stIn.close();
