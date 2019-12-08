@@ -82,13 +82,19 @@ class Account{
             cin >> option;
         }
         void control(){
-            if(account_type==1)atm = new Current(balance);
-            else if(account_type==2)atm = new Saving(balance);
-            else cout << "Invalid Account type selected." << endl;
-
-            if(option==1)atm->withdraw();
-            else if(option==2)atm->showBalance();
-            else cout << "Invalid Option Selected." << endl;
+            if(account_type==1){
+                atm = new Current(balance);
+                if(option==1)atm->withdraw();
+                else if(option==2)atm->showBalance();
+                else cout << "Invalid Option Selected." << endl;
+            }else if(account_type==2){
+                atm = new Saving(balance);
+                if(option==1)atm->withdraw();
+                else if(option==2)atm->showBalance();
+                else cout << "Invalid Option Selected." << endl;
+            }else{
+                cout << "Invalid Account type selected." << endl;
+            }
         }
 };
 
