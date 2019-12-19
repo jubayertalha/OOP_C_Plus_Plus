@@ -1,2 +1,2 @@
-Talha
-Jubayer
+Dob : 1\1\2000
+Nationality: "American"

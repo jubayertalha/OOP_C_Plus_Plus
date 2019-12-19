@@ -9,8 +9,8 @@ int main(){
     stIn.open("oopLab5_2.txt",ios::in);
     cout<<"Opening done"<<endl;
     if(stIn&&stOut){
-        stOut<<"Talha\n";
-        stOut<<"Jubayer\n";
+        stOut<<"Dob : 1\\1\\2000\n";
+        stOut<<"Nationality: \"American\"\n";
         stOut.close();
         cout<<"Writing done"<<endl;
         char ch;
