@@ -1,7 +1,7 @@
-#include<iostream>
-using namespace std;
-
-class Pet{
+#include<iostream>#include<cstring>#include<cmath>
+using namespace std;int toDecimal(string number,int base){    int decimal= 0;    int size = number.length();    for(int i=0; i<size; i++){        if(number[i]>='A'){            decimal += (number[i]-'A'+10) *pow(base,size-i-1);        }else{            decimal += (number[i]-'0') *pow(base,size-i-1);        }    }    return decimal;}char singleDigitPreprocees(int n){    if(n<10){        return n+'0';    }else if(n >= 10){        return 'A'+(n-10);    }}string decimalTo(int decimal,int base = 16){    char remainders[101];    if(decimal == 0){        return "0";    }    int i = 0;    while(decimal > 0){        char rem = singleDigitPreprocees(decimal%base);        decimal = decimal/base;        remainders[i++] = rem;    }    string any_base = "";    while(i>=0){        any_base += remainders[--i];    }    return any_base;}
+int main(){    int decimal;    string any_base;    int base;    while(1){        cout<<"\nChose Option:\n\t1. Decimal to Any Base\n\t2. Any Base to Decimal\n\tEnter Option: ";        int option;        cin>>option;        cout<<endl;        if(option==1){            cout<<"Enter the Decimal Number: ";            cin>>decimal;            cout<<"Enter the Base: ";            cin>>base;            cout<<endl;            cout<<decimal<<" converted to "<<base<<" based Number: "<<decimalTo(decimal,base)<<endl;        }else if(option==2){            cout<<"Enter Any Base Number: ";            cin>>any_base;            cout<<"Enter the Base: ";            cin>>base;            cout<<endl;            cout<<any_base<<" converted to Decimal Number: "<<toDecimal(any_base,base)<<endl;        }else{            cout<<"Invalid Option!"<<endl;        }        cout<<"\nDo you want to convert again? ( Y to convert again, anything to exit ) : ";        char convert;        cin>>convert;        if(convert!='Y'){            break;        }    }    return 0;}
+/*class Pet{
     protected:
         string Name;
     public:
@@ -45,7 +45,7 @@ int main() {
     static_cast<Pet *>(a_dog) -> MakeSound();
 
     return 0;
-}
+}*/
 
 /*#include<iostream>
 using namespace std;
